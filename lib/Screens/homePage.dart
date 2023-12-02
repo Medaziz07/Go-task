@@ -1,9 +1,13 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:go_task/Screens/loginPage.dart';
+
+import '../components/button.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
+  static String id = 'Homescreen';
 
   @override
   Widget build(BuildContext context) {
@@ -59,23 +63,21 @@ class HomePage extends StatelessWidget {
                     height: 33,
                   ),
                   SizedBox(
-                    width: 250,
-                    height: 49,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      )),
-                      onPressed: () {
-                            //showLoginOrSignUpDialog(context);
-;
+                    // width: 250,
+                    // height: 49,
+                    child: CustomButton(
+                      text: "Let's Go",
+                      onTap: () {
+                        Navigator.pushNamed(context, 'LoginPage');
                       },
-                      child: const Text(
-                        "Let's Start",
-                        style: TextStyle(fontSize: 18),
-                      ),
+                      buttonColor: Colors.blue,
+                      textColor: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      width: 300,
+                      height: 50,
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
@@ -85,4 +87,3 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-
